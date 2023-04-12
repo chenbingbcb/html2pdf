@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Document</title>
+	<style type="text/css">
+		table {
+			border: 1px solid;
+			border-collapse: collapse;
+
+		}
+
+		th {
+			border: 1px solid;
+			padding: 3px;
+			<!-- text-align:right; -->
+		}
+
+		td {
+			border: 1px solid;
+			padding: 3px;
+			<!-- text-align:right; -->
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 渲染时，变量name会被替换成对应的值 -->
+	<h1 align="center">报价明细表</h1>
+	<p align="left">
+	<img src="ewm.jpg" align="right" width=60 height=60>
+	<br>
+	采购编号：{{purchaseId}}
+	<br>
+	项目名称：{{projectName}}
+	<br>
+	包号：{{packageId}}
+	<br>
+	投标人名称：{{bidderName}}
+	</p>
+	<p align="left">
+	主食明细表
+	<table width="100%" style="font-family: 宋体">
+		<tr>
+			<td align="center" bgcolor="#F5F5F5">货物名称</td>
+			<td align="center" bgcolor="#F5F5F5">规格型号</td>
+			<td align="center" bgcolor="#F5F5F5">品牌</td>
+			<td align="center" bgcolor="#F5F5F5">单价(万元)</td>
+			<td align="center" bgcolor="#F5F5F5">数量</td>
+			<td align="center" bgcolor="#F5F5F5">总价(万元)</td>
+		</tr>
+		{{#TABLE1}}
+		<tr>
+			<td align="center">{{field1}}</td>
+			<td align="center">{{field2}}</td>
+			<td align="center">{{field3}}</td>
+			<td align="center">{{field4}}</td>
+			<td align="center">{{field5}}</td>
+			<td align="center">{{field6}}</td>
+		</tr>
+		{{/TABLE1}}
+		<tr>
+			<td align="left" colspan="6">备注：{{table1_note}}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	物业服务表
+	<table width="100%" style="font-family: 宋体">
+		<tr>
+			<td align="center" bgcolor="#F5F5F5" width=100>服务名称</td>
+			<td align="center" bgcolor="#F5F5F5">权重(%)</td>
+			<td align="center" bgcolor="#F5F5F5">上浮率(%)</td>
+			<td align="center" bgcolor="#F5F5F5">单价(元)</td>
+			<td align="center" bgcolor="#F5F5F5">数量</td>
+			<td align="center" bgcolor="#F5F5F5">总价(元)</td>
+		</tr>
+		{{#TABLE2}}
+		<tr>
+			<td align="center">{{field1}}</td>
+			<td align="center">{{field2}}</td>
+			<td align="center">{{field3}}</td>
+			<td align="center">{{field4}}</td>
+			<td align="center">{{field5}}</td>
+			<td align="center">{{field6}}</td>
+		</tr>
+		{{/TABLE2}}
+		<tr>
+			<td align="left" colspan="6">备注：{{table2_note}}</td>
+		</tr>
+	</table>
+	</p>
+	<p align="right">
+	投标人公章：{{bidderSign}}
+	<br>
+	日期：{{date}}
+	</p>
+</body>
+
+</html>
